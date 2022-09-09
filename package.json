@@ -1,0 +1,19 @@
+{
+  "name": "schools",
+  "version": "1.0.0",
+  "description": "Project to hunt properties based on school zones",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/app.js"
+  },
+  "author": "Ramkrao",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^18.1.0",
+    "himalaya": "^1.1.0",
+    "request": "^2.88.2",
+    "winston": "^3.8.1"
+  }
+}
