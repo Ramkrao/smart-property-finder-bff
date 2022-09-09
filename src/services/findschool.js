@@ -4,9 +4,9 @@ import request from 'request'
 import { logger } from '../logger.js'
 
 function getPrimary(lat, lon) {
-  logger.info(`Looking primary school for ${lat}, ${lon}`)
+  logger.info(`Looking primary school https://www.findmyschool.vic.gov.au/multi-lookup/2023/primary/${lon},${lat}`)
   return new Promise((resolve, reject) => {
-    request.get(`https://www.findmyschool.vic.gov.au/multi-lookup/2023/primary/${lat},${lon}`, (error, response, body) => {
+    request.get(`https://www.findmyschool.vic.gov.au/multi-lookup/2023/primary/${lon},${lat}`, (error, response, body) => {
       if (!error && response.statusCode == 200) {
         resolve(parseResults(JSON.parse(body)));
       } else {
@@ -17,9 +17,9 @@ function getPrimary(lat, lon) {
 }
 
 function getSecondary(lat, lon) {
-  logger.info(`Looking secondary school for ${lat}, ${lon}`)
+  logger.info(`Looking secondary school https://www.findmyschool.vic.gov.au/multi-lookup/2023/year7,juniorsec,singlesex/${lon},${lat}`)
   return new Promise((resolve, reject) => {
-    request.get(`https://www.findmyschool.vic.gov.au/multi-lookup/2023/year7,juniorsec,singlesex/${lat},${lon}`, (error, response, body) => {
+    request.get(`https://www.findmyschool.vic.gov.au/multi-lookup/2023/year7,juniorsec,singlesex/${lon},${lat}`, (error, response, body) => {
       if (!error && response.statusCode == 200) {
         resolve(parseResults(JSON.parse(body)));
       } else {
